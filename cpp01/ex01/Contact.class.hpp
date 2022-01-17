@@ -6,7 +6,7 @@
 /*   By: pdiaz-pa <pdiaz-pa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 09:25:36 by pdiaz-pa          #+#    #+#             */
-/*   Updated: 2022/01/17 12:56:17 by pdiaz-pa         ###   ########.fr       */
+/*   Updated: 2022/01/17 15:24:08 by pdiaz-pa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ public:
 	void	setNick( std::string nick );
 	void	setNumber( std::string number );
 	void	setSecret( std::string secret );
-
-    int     prueba;
     Contact();
     ~Contact();
 };
