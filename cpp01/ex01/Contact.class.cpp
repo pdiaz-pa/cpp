@@ -6,7 +6,7 @@
 /*   By: pdiaz-pa <pdiaz-pa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 09:25:27 by pdiaz-pa          #+#    #+#             */
-/*   Updated: 2022/01/17 12:53:36 by pdiaz-pa         ###   ########.fr       */
+/*   Updated: 2022/01/18 03:48:03 by pdiaz-pa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,19 @@ std::string  Contact::getFirst( void ){
 }
 
 std::string	Contact::getLast( void ){
-    return this->_first;
+    return this->_last;
 }
 
 std::string	Contact::getNick( void ){
-    return this->_first;
+    return this->_nick;
 }
 
 std::string	Contact::getNumber( void ){
-    return this->_first;
+    return this->_number;
 }
 
 std::string	Contact::getSecret( void ){
-    return this->_first;
+    return this->_secret;
 }
 
 void	Contact::setFirst(std::string first){
