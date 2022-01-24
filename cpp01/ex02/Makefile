@@ -1,6 +1,6 @@
-NAME = cyberphonebook2077
+NAME = bank
 
-SRCS = Contact.class.cpp Phonebook.class.cpp cyberphonebook2077.cpp
+SRCS = Account.cpp tests.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

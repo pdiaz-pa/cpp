@@ -6,12 +6,10 @@
 /*   By: pdiaz-pa <pdiaz-pa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 09:25:27 by pdiaz-pa          #+#    #+#             */
-/*   Updated: 2022/01/18 03:48:03 by pdiaz-pa         ###   ########.fr       */
+/*   Updated: 2022/01/24 10:55:55 by pdiaz-pa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include <iostream>
 #include "Contact.class.hpp"
 
 std::string  Contact::getFirst( void ){
@@ -55,11 +53,9 @@ void	Contact::setSecret(std::string secret){
 }
 
 Contact::Contact( void )    {
-    std::cout << "Creando contacto" << std::endl;
     return;
 }
 
 Contact::~Contact( void )   {
-    std::cout << "Destruyendo contacto" << std::endl;
     return;
 }

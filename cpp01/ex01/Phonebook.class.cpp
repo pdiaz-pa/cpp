@@ -6,7 +6,7 @@
 /*   By: pdiaz-pa <pdiaz-pa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 09:25:34 by pdiaz-pa          #+#    #+#             */
-/*   Updated: 2022/01/20 07:33:48 by pdiaz-pa         ###   ########.fr       */
+/*   Updated: 2022/01/24 10:56:14 by pdiaz-pa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,11 +122,9 @@ int Phonebook::search_mode ( ){
 }
 
 Phonebook::Phonebook( void ){
-	std::cout << "Creando agenda" << std::endl;
 	return;
 }
 
 Phonebook::~Phonebook( void ){
-	std::cout << "Destruyendo agenda" << std::endl;
 	return;
 }
