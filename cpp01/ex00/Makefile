@@ -1,27 +1,27 @@
-NAME			= megaphone
+NAME = zombies
 
-SOURCE			= megaphone.cpp
+SRCS = Zombie.cpp newZombie.cpp randomChump.cpp main.cpp
 
-OBJECT			=	$(SOURCE:.cpp=.o)
+OBJS = $(SRCS:.cpp=.o)
 
-COMPILE			= 	clang++
+CXX = clang++
 
-FLAGS			= 	-Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+
+%.o: %.cpp %.hpp Makefile
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+$(NAME): $(OBJS)
+	$(CXX) $(CXXFLAGS) $^ -o $@
 
 all: $(NAME)
 
-%.o: %.cpp
-	@$(COMPILE) $(FLAGS) -c $< -o $@
-
-$(NAME): $(OBJECT)
-	@$(COMPILE) $(FLAGS) $(OBJECT) -o $(NAME)
-
 clean:
-	@/bin/rm -f $(OBJECT)
+	$(RM) $(OBJS)
 
 fclean: clean
-	@/bin/rm -f $(NAME)
+	$(RM) $(NAME)
 
-re: fclean all
+re: clean all
 
 .PHONY: all clean fclean re

@@ -1,6 +1,6 @@
-NAME = zombies
+NAME = cyberphonebook2077
 
-SRCS = Zombie.cpp ZombieHord.cpp main.cpp
+SRCS = Contact.class.cpp Phonebook.class.cpp cyberphonebook2077.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
