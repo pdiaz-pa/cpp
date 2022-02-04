@@ -9,7 +9,7 @@ public:
     Fixed();
     ~Fixed();
     Fixed(Fixed const & src);
-    Fixed & operator=(Fixed const & rhs);
+    Fixed & operator=(Fixed const & fixed);
     int getRawBits( void ) const;
     void setRawBits( int const raw);
 };

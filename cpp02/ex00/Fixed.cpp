@@ -1,5 +1,6 @@
 #include "Fixed.hpp"
 #include <iostream>
+
 int Fixed::getRawBits( void ) const{
     std::cout << "getRawBits member function called" << std::endl;
     return(this->raw);
@@ -16,10 +17,10 @@ Fixed::Fixed() : raw(0){
     return;
 }
 
-Fixed & Fixed::operator=(Fixed const & rhs ){
+Fixed & Fixed::operator=(Fixed const & fixed ){
     std::cout << "Assignement operator called" << std::endl;
-    if (this != &rhs)
-        this->raw = rhs.getRawBits();
+    if (this != &fixed)
+        this->raw = fixed.getRawBits();
 
     return *this;
 }

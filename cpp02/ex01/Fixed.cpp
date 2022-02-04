@@ -44,10 +44,8 @@ Fixed::Fixed(int const integer){
 Fixed::Fixed(float const floatnum){
     
     std::cout << "Float constructor called" << std::endl;
-    
     raw = (int)roundf(floatnum * (1 << bitnum));
     std::cout << floatnum << std::endl << raw << std::endl;
-
     return;
 }
 
@@ -55,7 +53,6 @@ Fixed & Fixed::operator=(Fixed const & rhs ){
     std::cout << "Assignement operator called" << std::endl;
     if (this != &rhs)
         this->raw = rhs.getRawBits();
-
     return *this;
 }
 
