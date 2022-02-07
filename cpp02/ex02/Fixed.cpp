@@ -36,7 +36,6 @@ Fixed  & Fixed::operator+(Fixed const & rhs ){
     //std::cout << "Plus operator called" << std::endl;
     if (this != &rhs)
         this->raw = this->raw + rhs.getRawBits();
-
     return *this;
 }
 
@@ -44,7 +43,6 @@ Fixed & Fixed::operator-(Fixed const & rhs ){
     //std::cout << "Minus operator called" << std::endl;
     if (this != &rhs)
         this->raw = this->raw - rhs.getRawBits();
-
     return *this;
 }
 //(Fixed(this->toFloat() * fixed.toFloat()));
@@ -93,23 +91,23 @@ Fixed Fixed::operator++(int){
     return old;
 }
 // ********* MAYOR/MENOR O IGUAL QUE / MAYOR QUE / MENOR QUE / DISTINTO *****************
-bool Fixed::operator>( Fixed &lhs, Fixed &rhs){
-        return()
+bool Fixed::operator>(const Fixed &rhs ) const{
+        return(this->getRawBits() > rhs.getRawBits());
 }
-bool Fixed::operator<( void ){
-    
+bool Fixed::operator<(const Fixed &rhs ) const{
+    return(this->getRawBits() < rhs.getRawBits());
 }
-bool Fixed::operator>=( void ){
-    
+bool Fixed::operator>=(const Fixed &rhs ) const{
+    return(this->getRawBits() >= rhs.getRawBits());
 }
-bool Fixed::operator<=( void ){
-    
+bool Fixed::operator<=(const Fixed &rhs ) const{
+    return(this->getRawBits() <= rhs.getRawBits());
 }
-bool Fixed::operator==( void ){
-    
+bool Fixed::operator==(const Fixed &rhs ) const{
+    return(this->getRawBits() == rhs.getRawBits());
 }
-bool Fixed::operator!=( void ){
-    
+bool Fixed::operator!=(const Fixed &rhs ) const{
+    return(this->getRawBits() != rhs.getRawBits());
 }
 // *********SETTERS Y GETTERS************************************************************
 
@@ -123,7 +121,40 @@ void Fixed::setRawBits(int const raw){
     this->raw = raw;
     return;
 }
+//**********MIN Y MAX****************************************************************
+Fixed &Fixed::max(Fixed &a, Fixed &b){
 
+    if (a >= b)
+        return (a);
+    else
+        return (b);
+}
+
+Fixed &Fixed::min(Fixed &a, Fixed &b){
+    
+    
+    if (a <= b)
+        return(a);
+    else
+        return(b);
+}
+
+const Fixed &Fixed::max(Fixed const &a, Fixed const &b){
+
+    if (a >= b)
+        return (a);
+    else
+        return (b);
+}
+
+const Fixed &Fixed::min(Fixed const &a, Fixed const &b){
+    
+    
+    if (a <= b)
+        return(a);
+    else
+        return(b);
+}
 // *********CONSTRUCTORES************************************************************
 
 Fixed::Fixed( void ) : raw(0){
