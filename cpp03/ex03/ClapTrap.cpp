@@ -27,7 +27,7 @@ ClapTrap::ClapTrap(){
 
 ClapTrap::ClapTrap(std::string name): _hitpoints(10), _energypoints(10), _attackdamage(0){
     this->_name = name;
-    std::cout << "Claptrap created->" << name << std::endl;
+    std::cout << "ClapTrap created. Name->" << _name << " Hitpoints->" << _hitpoints << " Energypoints->" << _energypoints << " Attack damage->" << _attackdamage << std::endl;
 }
 
 ClapTrap::~ClapTrap()

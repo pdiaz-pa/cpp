@@ -6,7 +6,7 @@
 /*   By: pdiaz-pa <pdiaz-pa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 09:25:34 by pdiaz-pa          #+#    #+#             */
-/*   Updated: 2022/01/24 10:56:14 by pdiaz-pa         ###   ########.fr       */
+/*   Updated: 2022/02/14 08:48:10 by pdiaz-pa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,54 +42,61 @@ void Phonebook::print_head( void ){
 	std::cout << std::endl;
 }
 
-void Phonebook::print_book(  ){
+void Phonebook::print_book(){
 	int i;
 	std::string buff;
 	i = 0;
-	while (i < 8){
+	while (i < _maxindex){
 		std::cout << std::setfill(' ') << std::setw(10);
 		std::cout << i;
 		std::cout << "|";
 		std::cout << std::setfill(' ') << std::setw(10);
-		std::cout << search_printer(this->array[i].getFirst());
+		std::cout << search_printer(this->_array[i].getFirst());
 		std::cout << "|";
 		std::cout << std::setfill(' ') << std::setw(10);
-		std::cout << search_printer(this->array[i].getLast());
+		std::cout << search_printer(this->_array[i].getLast());
 		std::cout << "|";
 		std::cout << std::setfill(' ') << std::setw(10);
-		std::cout << search_printer(this->array[i].getNick());
+		std::cout << search_printer(this->_array[i].getNick());
 		std::cout << std::endl;		
 		i++;
 	}
 
 }
 
-int	Phonebook::add_mode(Contact *contact){
+int	Phonebook::add_mode(){
 	std::string buff;
 	std::cout << "Introduzca el nombre." << std::endl;
 	std::getline (std::cin, buff);
-	contact->setFirst(buff);
+	this->_array[_i].setFirst(buff);
 	std::cout << "Introduzca el apellido." << std::endl;
 	std::getline (std::cin, buff);
-	contact->setLast(buff);
+	this->_array[_i].setLast(buff);
 
 	std::cout << "Introduzca el apodo." << std::endl;
 	std::getline (std::cin, buff);
-	contact->setNick(buff);
+	this->_array[_i].setNick(buff);
 
 	std::cout << "Introduzca el teléfono." << std::endl;
 	std::getline (std::cin, buff);
-	contact->setNumber(buff);
+	this->_array[_i].setNumber(buff);
 
 	std::cout << "Introduzca el secreto más oscuro." << std::endl;
 	std::getline (std::cin, buff);
-	contact->setSecret(buff);
+	this->_array[_i].setSecret(buff);
 
-	std::cout << "nombre -> "<< contact->getFirst() << std::endl;
-	std::cout << "apellido -> " << contact->getLast() << std::endl;
-	std::cout << "apodo -> " << contact->getNick() << std::endl;
-	std::cout << "telefono -> " << contact->getNumber() << std::endl;
-	std::cout << "secreto -> " << contact->getSecret() << std::endl;
+	std::cout << "nombre -> "<< this->_array[_i].getFirst() << std::endl;
+	std::cout << "apellido -> " << this->_array[_i].getLast() << std::endl;
+	std::cout << "apodo -> " << this->_array[_i].getNick() << std::endl;
+	std::cout << "telefono -> " << this->_array[_i].getNumber() << std::endl;
+	std::cout << "secreto -> " << this->_array[_i].getSecret() << std::endl;
+
+	std::cout << "indice de la agenda -> " << this->_i << std::endl;
+	this->_i++;
+	if (_maxindex < 8)
+		_maxindex++;
+	if (this->_i == 8)
+		this->_i = 0;
 	return(0);
 }
 
@@ -106,14 +113,14 @@ int Phonebook::search_mode ( ){
 		std::cout << "Error. Ha de ser un número entre 0 y 7" << std::endl;
 	else{
 		index = std::stoi(strindex);
-		if (index > 8 || index < 0)
-			std::cout << "El número debe estar comprendido entre 0 y 7" << std::endl;
+		if ((index >= _i && _i != 0)|| index < 0)
+			std::cout << "Error" << std::endl;
 		else{
-			std::cout << "NOMBRE ->" << this->array[index].getFirst() << std::endl;
-			std::cout << "APELLIDO ->" << this->array[index].getLast() << std::endl;
-			std::cout << "APODO ->" << this->array[index].getNick() << std::endl;
-			std::cout << "NÚMERO ->" << this->array[index].getNumber() << std::endl;
-			std::cout << "SECRETO ->" << this->array[index].getSecret() << std::endl;
+			std::cout << "NOMBRE ->" << this->_array[index].getFirst() << std::endl;
+			std::cout << "APELLIDO ->" << this->_array[index].getLast() << std::endl;
+			std::cout << "APODO ->" << this->_array[index].getNick() << std::endl;
+			std::cout << "NÚMERO ->" << this->_array[index].getNumber() << std::endl;
+			std::cout << "SECRETO ->" << this->_array[index].getSecret() << std::endl;
 		}
 	}
 
@@ -122,6 +129,8 @@ int Phonebook::search_mode ( ){
 }
 
 Phonebook::Phonebook( void ){
+	_i = 0;
+	_maxindex = 0;
 	return;
 }
 

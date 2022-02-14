@@ -6,7 +6,7 @@
 /*   By: pdiaz-pa <pdiaz-pa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 12:16:45 by pdiaz-pa          #+#    #+#             */
-/*   Updated: 2022/01/20 08:15:30 by pdiaz-pa         ###   ########.fr       */
+/*   Updated: 2022/02/14 07:51:01 by pdiaz-pa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,9 @@
 
 int	main( void ){
     int again;
-	int i;
 	Phonebook book;
 	std::string mode;
 
-	i = 0;
     again = 1;
 	std::cout << "Bienvenido a CyberPhonebook 2077." << std::endl;
     while(again == 1){
@@ -30,11 +28,8 @@ int	main( void ){
 		std::getline (std::cin, mode);
 		if (mode.compare("ADD") == 0)
 		{
-			book.add_mode(&book.array[i]);
-			std::cout << "indice de la agenda -> " << i << std::endl;
-			i++;
-			if (i == 8)
-				i = 0;
+			book.add_mode();
+
 		}
 		else if (mode.compare("SEARCH") == 0)
 			book.search_mode();

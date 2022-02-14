@@ -1,7 +1,7 @@
 #pragma once
 #include "ClapTrap.hpp"
 
-class FrogTrap : public ClapTrap
+class FrogTrap : virtual public ClapTrap
 {
 private:
     

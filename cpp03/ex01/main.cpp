@@ -2,15 +2,12 @@
 
 int main( void ){
     
-
     ScavTrap goku("Goku del Betis");
-    ScavTrap curro("El Curro");
-    ClapTrap skippy("Skippy");
+    ClapTrap vegeta("Vegeta");
 
-    skippy.attack(curro.getName());
-    goku.attack(curro.getName());
-    skippy.attack(skippy.getName());
-    curro.guardGate();
+    vegeta.attack(goku.getName());
+    goku.attack(vegeta.getName());
+    goku.guardGate();
     
     return (0);
 }

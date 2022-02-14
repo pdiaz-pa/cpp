@@ -8,6 +8,10 @@ FrogTrap::FrogTrap(std::string name){
     std::cout << "FrogTrap created" << std::endl;
 }
 FrogTrap::FrogTrap(){
+    _name = "unknown";
+    _hitpoints = 100;
+    _energypoints = 50;
+    _attackdamage = 20;
     std::cout << "Default Frogtrap created" <<  std::endl;
 }
 
