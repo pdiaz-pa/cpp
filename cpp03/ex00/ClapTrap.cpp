@@ -21,6 +21,21 @@ void ClapTrap::setName( std::string name ){
     this->_name = name;
 }
 
+ClapTrap & ClapTrap::operator=(ClapTrap const & rhs){
+	if (this != &rhs){
+		this->_attackdamage = rhs._attackdamage;
+		this->_energypoints = rhs._energypoints;
+		this->_hitpoints = rhs._hitpoints;
+		this->_name = rhs._name;
+	}
+	return(*this);
+}
+
+ClapTrap::ClapTrap(ClapTrap const & src){
+	*this = src;
+	return;
+}
+
 ClapTrap::ClapTrap(std::string name): _hitpoints(10), _energypoints(10), _attackdamage(0){
     this->_name = name;
     std::cout << "ClapTrap created. Name->" << _name << " Hitpoints->" << _hitpoints << " Energypoints->" << _energypoints << " Attack damage->" << _attackdamage << std::endl;

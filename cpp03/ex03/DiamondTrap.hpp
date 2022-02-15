@@ -7,6 +7,8 @@ class DiamondTrap : public FrogTrap, public ScavTrap
 private:
 	std::string _name;
 public:
+	DiamondTrap & operator=(DiamondTrap const & rhs);
+	DiamondTrap(DiamondTrap const & src);
     DiamondTrap(std::string name);
     DiamondTrap();
     ~DiamondTrap();

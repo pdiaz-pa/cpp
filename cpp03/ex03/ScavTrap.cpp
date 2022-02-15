@@ -18,6 +18,21 @@ ScavTrap::ScavTrap(){
     _attackdamage = 30;
     std::cout << "Default Scavtrap created" << std::endl;
 }
+
+ScavTrap & ScavTrap::operator=(ScavTrap & rhs){
+	if (this != &rhs){
+		this->_attackdamage = rhs._attackdamage;
+		this->_energypoints = rhs._energypoints;
+		this->_hitpoints = rhs._hitpoints;
+		this->_name = rhs._name;
+	}
+}
+
+ScavTrap::ScavTrap(ScavTrap & src){
+	*this = src;
+	return;
+}
+
 ScavTrap::~ScavTrap(){
     std::cout << "Scavtrap destroyed->" << _name <<  std::endl;
 }

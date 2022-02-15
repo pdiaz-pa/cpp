@@ -18,6 +18,8 @@ public:
     std::string getName( void );
     void setName( std::string name );
     ClapTrap(std::string name);
+	ClapTrap & operator=(ClapTrap const & rhs);
+	ClapTrap(ClapTrap const & src);
     ClapTrap();
     ~ClapTrap();
 };

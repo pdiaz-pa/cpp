@@ -1,10 +1,28 @@
 #include "DiamondTrap.hpp"
 
+DiamondTrap::DiamondTrap(){
+
+}
+
+DiamondTrap & DiamondTrap::operator=(DiamondTrap const & rhs){
+	if (this != &rhs){
+		this->_attackdamage = rhs._attackdamage;
+		this->_energypoints = rhs._energypoints;
+		this->_hitpoints = rhs._hitpoints;
+		this->_name = rhs._name;
+	}
+}
+
+DiamondTrap::DiamondTrap(DiamondTrap const & src){
+	*this = src;
+	return;
+}
+
 DiamondTrap::DiamondTrap(std::string name){
 	_name = name;
 	ClapTrap::_name = name + "_clap_name";
 	_hitpoints = FrogTrap::_hitpoints;
-	_energypoints = ScavTrap::_energypoints;
+	_energypoints = DiamondTrap::_energypoints;
 	_attackdamage = FrogTrap::_attackdamage;
     std::cout << "Diamondtrap created. Name->" << _name << " Hitpoints->" << _hitpoints << " Energypoints->" << _energypoints << " Attack damage->" << _attackdamage << std::endl;
 }

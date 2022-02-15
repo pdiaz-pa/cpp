@@ -6,6 +6,9 @@ class FrogTrap : public ClapTrap
 private:
     std::string _name;
 public:
+	FrogTrap & operator=(FrogTrap & rhs);
+	FrogTrap(FrogTrap & src);
+	FrogTrap();
     void highFiveGuys( void );
     FrogTrap(std::string name);
     ~FrogTrap();
