@@ -5,7 +5,7 @@
 int main ( void ){
 
 	Animal *array[10];
-	Animal pepe;
+	//Animal pepe; //no se puede instanciar
 	int i;
 	i = 0;
 
@@ -24,6 +24,6 @@ int main ( void ){
 		i--;
 	}
 
-	system("leaks brains");
+	system("leaks abstract");
 	return (0);
 }

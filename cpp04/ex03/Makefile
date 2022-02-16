@@ -1,6 +1,6 @@
-NAME = brains
+NAME = abstract
 
-SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
+SRCS = main.cpp AMateria.cpp Ice.cpp Cure.cpp ICharacter.cpp IMateriaSource.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
