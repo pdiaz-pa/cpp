@@ -2,7 +2,7 @@
 
 Ice::Ice(/* args */)
 {
-	type = "ice";
+	this->type = "ice";
 }
 
 Ice::~Ice()
