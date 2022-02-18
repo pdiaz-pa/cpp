@@ -1,8 +1,13 @@
 #include "Cure.hpp"
 
-Cure & Cure::operator=(const Cure & Cure){
-	if (this != &Cure)
-		this->type = Cure.type;
+void Cure::use(ICharacter& target){
+	std::cout << "*heals " << target.getName() << "'s wounds*" << std::endl;
+}
+
+
+Cure & Cure::operator=(const Cure & cure){
+	if (this != &cure)
+		this->type = cure.type;
 
 	return *this;
 }

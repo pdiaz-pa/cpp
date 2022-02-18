@@ -5,18 +5,20 @@
 class Character : public ICharacter
 {
 protected:
-
-
-	AMateria *array[4];
-	int arrsize = 4;
+	static const int arrsize = 4;
+	AMateria *array[arrsize];
 	std::string name;
 public:
 	std::string const & getName() const;
 	void equip(AMateria *m);
 	void unequip(int idx);
 	void use(int idx, ICharacter &target);
-	Character(/* args */);
-	~Character();
+	Character &operator=(const Character &rhs);
+
+	Character(const Character &src);
+	Character(std::string const & name);
+	Character();
+	virtual ~Character();
 };
 
 
