@@ -1,26 +1,36 @@
 #include "Character.hpp"
 
 void Character::use(int idx, ICharacter &target){
-	this->array[idx]->use(target);
+	if (idx >= 0 && idx < arrsize && array[idx])
+	{
+		array[idx]->use(target);
+		return ;
+	}
+	std::cout << "do nothing" << std::endl;
 }
 
 void Character::equip(AMateria *m){
 	int i;
 	i = 0;
-
 	while (i < this->arrsize){
-		if (this->array[i] != NULL){
-			this->array[i] == m;
+		if (this->array[i] == NULL){
+			
+			this->array[i] = m;
+			std::cout << this->name << " equiped " << m->getType() << " in slot " << i << std::endl;
 			return;
 		}
 		i++;
 	}
-	return;
+	delete m;
 }
 
 void Character::unequip(int idx){
-	if (this->array[idx] != NULL)
-		this->array[idx] == NULL;
+	if ( idx >= 0 && idx < this->arrsize && this->array[idx] != NULL){
+		std::cout << this->name << " unequipped " << array[idx]->getType() << " from slot " << idx << std::endl;
+		this->array[idx] = NULL;
+		return ;
+	}
+	std::cout << "You can't unequipped an empty slot." << std::endl;
 }
 
 Character &Character::operator=(const Character &rhs){
@@ -30,7 +40,7 @@ Character &Character::operator=(const Character &rhs){
 		this->name = rhs.name;
 		while (i < this->arrsize){
 			if (this->array[i]){
-				delete array[i];
+				delete this->array[i];
 			if(rhs.array[i])
 				array[i] = rhs.array[i]->clone();
 			}
@@ -42,7 +52,7 @@ Character &Character::operator=(const Character &rhs){
 	return(*this);
 }
 
-std::string Character::const & getName() const{
+const std::string &Character::getName() const{
 	return (this->name);
 }
 
@@ -51,7 +61,7 @@ Character::Character(const Character &src){
 	*this = src;
 }
 
-Character::Character(std::string const & name)
+Character::Character(const std::string & name)
 {
 	int i;
 	i = 0;

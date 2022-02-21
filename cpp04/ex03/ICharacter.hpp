@@ -1,10 +1,10 @@
 #pragma once
 #include "AMateria.hpp"
 
+class AMateria;
+
 class ICharacter
 {
-private:
-	/* data */
 public:
 	virtual const std::string &getName() const = 0;
 	virtual void equip(AMateria *m) = 0;

@@ -16,7 +16,7 @@ public:
 	Character &operator=(const Character &rhs);
 
 	Character(const Character &src);
-	Character(std::string const & name);
+	Character(const std::string & name);
 	Character();
 	virtual ~Character();
 };

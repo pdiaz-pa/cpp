@@ -5,9 +5,11 @@ class MateriaSource : public IMateriaSource
 {
 protected:
 	AMateria *array[4];
+	static const int arraysize = 4;
 public:
 	MateriaSource();
-	~MateriaSource(/* args */);
-	void learnmateria(AMateria*);
-	AMateria* createMateria(std::string const type);
+	MateriaSource(const MateriaSource &src);
+	~MateriaSource();
+	void learnMateria(AMateria *m);
+	AMateria* createMateria(std::string const & type);
 };

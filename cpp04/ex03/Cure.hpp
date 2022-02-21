@@ -6,9 +6,10 @@ class Cure : public AMateria
 protected:
 	std::string type;
 public:
-	virtual void use(ICharacter& target);
+	void use(ICharacter& target);
 	Cure* clone() const;
 	Cure & operator=(const Cure & Cure);
-	Cure(/* args */);
-	~Cure();
+	Cure(const Cure & src);
+	Cure();
+	virtual ~Cure();
 };

@@ -6,7 +6,7 @@ AMateria::AMateria(const AMateria & src){
 }
 
 AMateria::AMateria(){
-	this->type = "standard";
+	this->type = "unknown";
 }
 
 std::string const &AMateria::getType() const{
@@ -16,10 +16,11 @@ std::string const &AMateria::getType() const{
 AMateria & AMateria::operator=(const AMateria & rhs){
 	if (this != &rhs)
 		this->type = rhs.type;
+	return (*this);
 }
 
 void 	AMateria::use(ICharacter &target){
-	std::cout << "AMateria using" << std::endl;
+	std::cout << "AMateria using in " << target.getName() << std::endl;
 }
 
 AMateria::AMateria(std::string const & type)

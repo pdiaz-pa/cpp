@@ -6,9 +6,10 @@ class Ice : public AMateria
 protected:
 	std::string type;
 public:
-	virtual void use(ICharacter& target);
+	void use(ICharacter& target);
 	Ice* clone() const;
 	Ice & operator=(const Ice & ice);
-	Ice(/* args */);
-	~Ice();
+	Ice(const Ice & src);
+	Ice();
+	virtual ~Ice();
 };
