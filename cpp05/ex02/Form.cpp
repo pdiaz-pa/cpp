@@ -32,7 +32,7 @@ std::ostream& operator<<(std::ostream &o, Form const &form){
 	o << "Form " << form.getName() << " requires " << form.getReqgrade() << " grade to be signed and " << form.getReqexec() << " grade to be executed." << std::endl;
 	return o; 
 }
-Form::Form(const std::string name, const int reqgrade, const int reqexec) : name(name), reqgrade(reqgrade), reqexec(reqexec) 
+Form::Form() : name(name), reqgrade(reqgrade), reqexec(reqexec) 
 {
 	_signed = 0;
 	if (reqexec > 150 || reqgrade > 150)
