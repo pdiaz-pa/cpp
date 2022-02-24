@@ -12,6 +12,20 @@ private:
     const int reqgrade;
     const int reqexec;
 public:
+    class WasAlreadySigned : public std::exception{
+        public:
+            virtual const char *what() const throw()
+            {
+                return("This form was already signed.");
+            }
+    };
+    class IsnotSigned : public std::exception{
+        public:
+            virtual const char *what() const throw()
+            {
+                return("This form is not signed!");
+            }
+    };
     class GradeTooHighException : public std::exception{
 	public:
         virtual const char *what() const throw()
@@ -26,8 +40,17 @@ public:
         	return ("Form::exception : Grade is too low");
         }
     };
+    class ExecuteException : public std::exception{
+	public:
+        virtual const char *what() const throw()
+        {
+        	return ("Form::exception : this Form is not executable by this executor");
+        }
+    };
+    virtual void letsExecute(Bureucrat const & executor) const = 0;
+    void execute(Bureucrat const & executor) const;
 	const std::string getName() const;
-	bool getSigned();
+	bool getSigned() const;
 	void setSigned();
 	int getReqgrade() const;
 	int getReqexec() const;
@@ -35,7 +58,7 @@ public:
     Form(const std::string name, const int reqgrade, const int reqexec);
 	Form(const Form & form);
 	Form();
-    ~Form();
+    virtual ~Form();
 };
 
 std::ostream& operator<<(std::ostream &o, Form const &form);

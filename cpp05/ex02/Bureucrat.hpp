@@ -22,6 +22,7 @@ class Bureucrat
         		return ("Bureaucrat::exception : Grade is too low");
         	}
     	};
+    void executeForm(Form const & form);
 	void signForm(Form &form);
     Bureucrat & operator=(const Bureucrat & bureucrat);
     void moreGrade();

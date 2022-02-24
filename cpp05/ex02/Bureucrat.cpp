@@ -1,5 +1,13 @@
 #include "Bureucrat.hpp"
-
+void Bureucrat::executeForm(Form const & form){
+	try{
+        std::cout << this->name << " executes " << form.getName() << std::endl;
+        form.execute(*this);
+    }
+    catch(const std::exception &e){
+        std::cerr << this->name << " can't execute " << form.getName() << " because " << e.what() << '\n';
+    }
+}
 
 std::ostream& operator<<(std::ostream &o, Bureucrat const &bureucrat){
     o << bureucrat.getName() << ", bureucrat grade " << bureucrat.getGrade();
@@ -20,7 +28,7 @@ void Bureucrat::signForm(Form &form){
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << this->name << " can't sign " << form.getName() << " beacuse " << e.what() << '\n';
+		std::cerr << this->name << " can't sign " << form.getName() << " because " << e.what() << '\n';
 	}
 	
 }

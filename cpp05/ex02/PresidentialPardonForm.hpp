@@ -6,7 +6,8 @@ class PresidentialPardonForm : public Form
 private:
 	std::string _target;
 public:
-	PresidentialPardonForm(std::string target);
-	~PresidentialPardonForm();
+	void letsExecute(Bureucrat const & executor) const;
+	PresidentialPardonForm(const std::string target);
+	PresidentialPardonForm();
+	virtual ~PresidentialPardonForm();
 };
-
