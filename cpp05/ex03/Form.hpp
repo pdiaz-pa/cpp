@@ -47,9 +47,8 @@ public:
         	return ("Form::exception : this Form is not executable by this executor");
         }
     };
-    virtual Form *makeForm(std::string formname, std::string target) = 0;
     virtual void letsExecute(Bureucrat const & executor) const = 0;
-    void execute(Bureucrat const & executor) const;
+    virtual void execute(Bureucrat const & executor) const;
 	const std::string getName() const;
 	bool getSigned() const;
 	void setSigned();

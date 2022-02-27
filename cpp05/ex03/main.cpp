@@ -5,17 +5,12 @@
 #include "ShrubberyCreationForm.hpp"
 #include "Intern.hpp"
 int main(){ 
-try
-{
-    
-    Form *test = Intern::makeForm("presidential pardon", "pepe");
+    Intern unpayedguy;
+    Form *test;
 
-    std::cout << test << std::endl;
-
-}
-catch(const std::exception& e)
-{
-    std::cerr << e.what() << '\n';
-}
+	test = unpayedguy.makeForm("presidential pardon", "pipi");
+	test = unpayedguy.makeForm("shrubbery creation", "pipi");
+	test = unpayedguy.makeForm("robotomy request", "pipi");
+	test = unpayedguy.makeForm("declaracion de la renta", "pipi");
 std::cout << "----------------------------------------------------------------" << std::endl;
 }

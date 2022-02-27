@@ -1,11 +1,6 @@
 #include "ShrubberyCreationForm.hpp"
 #include <string>
 
-Form *makeForm(std::string formname, std::string target){
-	std::cout << "shrubbery makeform" << formname << target <<  std::endl;
-	Form *tmp = new ShrubberyCreationForm(target);
-	return (tmp);
-}
 
 void ShrubberyCreationForm::letsExecute(Bureucrat const & executor) const{
 
@@ -49,13 +44,13 @@ void ShrubberyCreationForm::letsExecute(Bureucrat const & executor) const{
 	}
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("ShrubberyForm", 145, 137), _target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("shrubbery creation", 145, 137), _target(target)
 {
 	std::cout << "Shrubbery Creation Form created." << std::endl;
 
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm() : Form("ShrubberyForm", 145, 137), _target("target")
+ShrubberyCreationForm::ShrubberyCreationForm() : Form("shrubbery creation", 145, 137), _target("target")
 {
 	std::cout << "Standard Shrubbery Creation Form created." << std::endl;
 
@@ -63,4 +58,5 @@ ShrubberyCreationForm::ShrubberyCreationForm() : Form("ShrubberyForm", 145, 137)
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
+	std::cout << "Shrubbery Creation Form destroyed." << std::endl;
 }

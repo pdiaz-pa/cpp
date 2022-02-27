@@ -1,12 +1,11 @@
-#include "Form.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 class Intern
 {
 public:
-    static Form *makeForm(std::string formname, std::string target);
+    Form *makeForm(const std::string formname, const std::string target) const;
     Intern(/* args */);
-    ~Intern();
+    virtual ~Intern();
 };
 

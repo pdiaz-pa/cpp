@@ -12,7 +12,6 @@ public:
 				return ("Unsuccessful robotomy. :(");
 			}
 	};
-	virtual Form *makeForm(std::string formname, std::string target);
 	void letsExecute(Bureucrat const & executor) const;
 	RobotomyRequestForm(const std::string target);
 	RobotomyRequestForm();

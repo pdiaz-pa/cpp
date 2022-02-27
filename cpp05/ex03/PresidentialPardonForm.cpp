@@ -1,10 +1,6 @@
 #include "PresidentialPardonForm.hpp"
 
-Form *makeForm(std::string formname, std::string target){
-	std::cout << "presidential pardon" << formname << target <<  std::endl;
-	Form *tmp = new PresidentialPardonForm(target);
-	return (tmp);
-}
+
 void PresidentialPardonForm::letsExecute(Bureucrat const & executor) const{
 	if (this->getSigned() == 0)
 		throw IsnotSigned();
@@ -16,15 +12,16 @@ void PresidentialPardonForm::letsExecute(Bureucrat const & executor) const{
 
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string target) : Form("PresidentialForm", 25, 5), _target(target)
+PresidentialPardonForm::PresidentialPardonForm(const std::string target) : Form("presidential pardon", 25, 5), _target(target)
 {
 	std::cout << "Presidential Pardon Form created ." << std::endl;
 }
-PresidentialPardonForm::PresidentialPardonForm() : Form("PresidentialForm", 25, 5), _target("target")
+PresidentialPardonForm::PresidentialPardonForm() : Form("presidential pardon", 25, 5), _target("target")
 {
 	std::cout << "Presidential Pardon Form created." << std::endl;
 }
 
 PresidentialPardonForm::~PresidentialPardonForm()
 {
+	std::cout << "presidential pardon destroyed" << std::endl;
 }

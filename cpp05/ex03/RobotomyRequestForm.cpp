@@ -1,10 +1,5 @@
 #include "RobotomyRequestForm.hpp"
 
-Form *makeForm(std::string formname, std::string target){
-	std::cout << "robotomy request" << formname << target <<  std::endl;
-	Form *tmp = new RobotomyRequestForm(target);
-	return (tmp);
-}
 void RobotomyRequestForm::letsExecute(Bureucrat const & executor) const{
 	if (this->getSigned() == 0)
 		throw IsnotSigned();
@@ -22,13 +17,13 @@ void RobotomyRequestForm::letsExecute(Bureucrat const & executor) const{
 		}
 	}
 }
-RobotomyRequestForm::RobotomyRequestForm(const std::string target)  : Form("RobotomyForm", 72, 45), _target(target)
+RobotomyRequestForm::RobotomyRequestForm(const std::string target)  : Form("robotomy request", 72, 45), _target(target)
 {
 	std::cout << "Robotomy Request Form created." << std::endl;
 
 }
 
-RobotomyRequestForm::RobotomyRequestForm()  : Form("StandardRobotomyForm", 72, 45), _target("target")
+RobotomyRequestForm::RobotomyRequestForm()  : Form("standard robotomy", 72, 45), _target("target")
 {
 	std::cout << "Standard Robotomy Request Form created." << std::endl;
 
@@ -36,4 +31,5 @@ RobotomyRequestForm::RobotomyRequestForm()  : Form("StandardRobotomyForm", 72, 4
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
+	std::cout << "robotomy request destroyed" << std::endl;
 }
