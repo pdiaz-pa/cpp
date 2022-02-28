@@ -5,7 +5,7 @@ void Bureucrat::executeForm(Form const & form){
         form.execute(*this);
     }
     catch(const std::exception &e){
-        std::cerr << this->name << " can't execute " << form.getName() << " because " << e.what() << '\n';
+        std::cerr << this->name << " can't execute " << form.getName() << " because " << e.what() << ". sign status:  " << form.getSigned() << ". grade to be executed: " << form.getReqexec() << '\n';
     }
 }
 
@@ -17,13 +17,12 @@ std::ostream& operator<<(std::ostream &o, Bureucrat const &bureucrat){
 void Bureucrat::signForm(Form &form){
 	try
 	{
-		if (this->grade < form.getReqgrade())
-			throw GradeTooHighException();
-		else if(this->grade > form.getReqgrade()){
+        if(this->grade > form.getReqgrade()){
 			throw GradeTooLowException();
 		}
 		else{
 			std::cout << this->name << " signs " << form.getName() << std::endl;
+            form.setSigned();
 		}
 	}
 	catch(const std::exception& e)

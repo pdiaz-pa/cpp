@@ -1,7 +1,7 @@
 #include "Form.hpp"
 
 void Form::execute(Bureucrat const & executor) const{
-	if (this->_signed == 1 && executor.getGrade() < this->reqexec){
+	if (this->_signed == 1 && executor.getGrade() <= this->reqexec){
 		letsExecute(executor);
 	}
 	else{
@@ -41,7 +41,7 @@ void Form::setSigned(){
 }
 
 std::ostream& operator<<(std::ostream &o, Form const &form){
-	o << "Form " << form.getName() << " requires " << form.getReqgrade() << " grade to be signed and " << form.getReqexec() << " grade to be executed." << std::endl;
+	o << "Form " << form.getName() << " requires " << form.getReqgrade() << " grade to be signed and " << form.getReqexec() << " grade to be executed.";
 	return o; 
 }
 Form::Form(std::string name, const int reqgrade, const int reqexec) : name(name), reqgrade(reqgrade), reqexec(reqexec) 

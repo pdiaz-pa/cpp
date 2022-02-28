@@ -3,7 +3,14 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
-int main(){ 
+int main(){
+    Bureucrat *goku = new Bureucrat("goku", 20);
+	Form *form = new ShrubberyCreationForm("formulario");
+    std::cout << *goku << std::endl;
+	std::cout << *form << std::endl;
+	form->beSigned(*goku);
+    goku->executeForm(*form);
+    /*
 try
 {
     Bureucrat *piccolo = new Bureucrat("Piccolo", 1);
@@ -64,4 +71,5 @@ catch(const std::exception& e)
     std::cerr << e.what() << '\n';
 }
 std::cout << "----------------------------------------------------------------" << std::endl;
+*/
 }

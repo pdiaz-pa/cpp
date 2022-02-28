@@ -39,7 +39,7 @@ void ShrubberyCreationForm::letsExecute(Bureucrat const & executor) const{
 		file << "                               .%@@@@%::;         	" << std::endl;
 		file << "                               ;%@@@@%::;.          	" << std::endl;
 		file << "                              ;%@@@@%%:;;;. 	" << std::endl;
-		file << "                          ...;%@@@@@%%:;;;;,..    Gilo97	" << std::endl;
+		file << "                          ...;%@@@@@%%:;;;;,..  	" << std::endl;
 		file.close();
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: pdiaz-pa <pdiaz-pa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 12:16:45 by pdiaz-pa          #+#    #+#             */
-/*   Updated: 2022/02/14 07:51:01 by pdiaz-pa         ###   ########.fr       */
+/*   Updated: 2022/02/28 10:05:24 by pdiaz-pa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int	main( void ){
 		if (mode.compare("ADD") == 0)
 		{
 			book.add_mode();
-
 		}
 		else if (mode.compare("SEARCH") == 0)
 			book.search_mode();
