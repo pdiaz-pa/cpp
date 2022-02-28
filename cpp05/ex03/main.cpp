@@ -10,7 +10,7 @@ int main(){
 	Form		*shrub = new ShrubberyCreationForm("home");
 	Bureucrat	curro("curro", 1);
 	Bureucrat	goku("goku", 140);
-
+	srand(time(NULL));
 	curro.executeForm(*shrub);
 	curro.signForm(*shrub);
 	std::cout << *shrub << std::endl;
