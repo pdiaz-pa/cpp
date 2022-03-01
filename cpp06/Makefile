@@ -1,6 +1,6 @@
-NAME = bureucrat
+NAME = processor
 
-SRCS = main.cpp
+SRCS = main.cpp Data.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
