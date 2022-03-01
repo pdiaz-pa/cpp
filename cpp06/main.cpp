@@ -7,5 +7,5 @@ int main ( int argc, char **argv ){
     }
     std::string rawstr(argv[1]);
     Data data;
-    data.Processor(rawstr);
+    data.processor(rawstr);
 }

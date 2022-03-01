@@ -24,7 +24,7 @@ DiamondTrap::DiamondTrap(std::string name){
 	_hitpoints = FrogTrap::_hitpoints;
 	_energypoints = DiamondTrap::_energypoints;
 	_attackdamage = FrogTrap::_attackdamage;
-    std::cout << "Diamondtrap created. Name->" << _name << " Hitpoints->" << _hitpoints << " Energypoints->" << _energypoints << " Attack damage->" << _attackdamage << std::endl;
+	std::cout << "Diamondtrap created. Name->" << _name << " Hitpoints->" << _hitpoints << " Energypoints->" << _energypoints << " Attack damage->" << _attackdamage << std::endl;
 }
 
 DiamondTrap::~DiamondTrap()
