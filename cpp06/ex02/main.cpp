@@ -8,15 +8,15 @@ Base *generate (){
 	int dice = std::rand () % 3;
 	std::cout << "object type ";
 	if (dice == 0){
-		std::cout << "A created.";
+		std::cout << "A created." << std::endl;
 		return (new A);
 	}
 	if (dice == 1){
-		std::cout << "B created.";
+		std::cout << "B created." << std::endl;
 		return(new B);
 	}
 	if (dice == 2){
-		std::cout << "C created.";
+		std::cout << "C created." << std::endl;
 		return (new C);
 	}
 	return 0;
@@ -35,13 +35,33 @@ void identify(Base *p){
 
 
 void identify(Base &p){
-	(void)dynamic_cast<A &>(p);
-	(void)dynamic_cast<B &>(p);
-	(void)dynamic_cast<C &>(p);
+	
+	try
+	{
+		p = dynamic_cast<A &>(p);
+	}
+	catch(const std::exception& e){}
+	try
+	{
+		p = dynamic_cast<B &>(p);
+	}
+	catch(const std::exception& e)
+	{
+	}
+	try
+	{
+		p = dynamic_cast<C &>(p);
+	}
+	catch(const std::exception& e)
+	{
+	}
+	
+
+
+
 }
 
 int main (void){
-
 	Base *base = generate();
 	identify(base);
 	identify(*base);
