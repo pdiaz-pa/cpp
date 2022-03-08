@@ -20,43 +20,34 @@ int main ( void ){
         int random = (rand() % 100);
         nums[i] = random;
     }
-    for(unsigned int i = 0; i < nums.size(); i++){
-            std::cout << nums[i] << std::endl;
-    }
+    std::cout << nums;
     std::cout << "-----STRINGS-----" << std::endl;
     Array <std::string>cuerda(8);
     for(unsigned int i = 0; i < cuerda.size(); i++){
         cuerda[i] = getRandomWord();
     }
-    for(unsigned int i = 0; i < cuerda.size(); i++){
-            std::cout << cuerda[i] << std::endl;
-    }
+    std::cout << cuerda;
     std::cout << "-----FLOATS-----" << std::endl;
     Array <float>flotante(4);
     for(unsigned int i = 0; i < flotante.size(); i++){
-        float random = (rand() % 100);
+        float random = (rand() % 100) / 3.4f;
         flotante[i] = random;
     }
-
     Array <float>copia = flotante;
-    flotante[1] = 69.69f;
-
-
+    Array <float>recopia(flotante);
+    flotante[1] = 4242.42f;
     try
     {
-        std::cout << "lista de flotantes" << std::endl;
-        for(unsigned int i = 0; i < flotante.size(); i++){
-                std::cout << flotante[i] << std::endl;
-        }
-        std::cout << "copia de flotantes" << std::endl;
-        for(unsigned int i = 0; i < copia.size(); i++){
-                std::cout << copia[i] << std::endl;    
-        }
+        std::cout << "floats array->   ";
+        std::cout << flotante;
+        std::cout << "floats copy array->   ";
+        std::cout << copia;
+        std::cout << "floats recopy array->   ";
+        std::cout << recopia;
         std::cout << copia[454] << std::endl;
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }
-    
 }

@@ -26,7 +26,7 @@ public:
 	OVERLOADS
 	////////////////
 	*/
-    T &operator[](unsigned int i) {
+    T &operator[](unsigned int i) const{
 		if (i < 0 || i >= _size)
 			throw OutOfBounds();
 		return (elements[i]);
@@ -37,7 +37,6 @@ public:
 		if (this->_size > 0)
 			delete [] this->elements;
 		this->_size = rhs.size();
-		std::cout << _size << "tamaño" << std::endl;
 		this->elements = new T(_size);
 		for (unsigned int i = 0; i < _size; i++)
 		{
@@ -75,13 +74,10 @@ public:
 };
 
 template <typename T> std::ostream  & operator<<(std::ostream &o, const Array<T> &src){
-	unsigned int	max = 5;
 
-	o << "[" << src.size() << "] ";
-	for (unsigned int i = 0; i < src.size() && i < max; i++)
+	o << "size of the array: " << src.size() << " | array: ";
+	for (unsigned int i = 0; i < src.size(); i++)
 		o << src[i] << " ";
-	if (max < src.size())
-		o << "...";
 	o << std::endl;
 	return (o);
 }
