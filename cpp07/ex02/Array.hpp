@@ -1,19 +1,3 @@
-/*
-		Array<T>	&operator=(const Array<T> &array)
-		{
-			if (this != &array)
-			{
-				if (_size > 0)
-					delete [] _data;
-				_size = array._size;
-				_data = new T[array._size];
-				for (unsigned int i = 0; i < _size; i++)
-					_data[i] = array._data[i];
-			}
-			return (*this);
-		}
-
-*/
 
 #pragma once
 #include <iostream>
@@ -24,50 +8,62 @@ private:
 	T *elements;
 	unsigned int _size;
 public:
-	class outOfBounds : public std::exception
+	/*
+	///////////////
+	EXCEPTIONS
+	////////////////
+	*/
+	class OutOfBounds : public std::exception
 	{
 	public:
         virtual const char *what() const throw()
         {
-        	return ("size selected is out of bounds");
+        	return ("size selected is out of bounds!!!!");
         }
 	};
-	
+	/*
+	///////////////
+	OVERLOADS
+	////////////////
+	*/
     T &operator[](unsigned int i) {
-       if( i > _size ) {
-          std::cout << "Index out of bounds" << std::endl; 
-          return elements[0];
-       }
-       return elements[i];
-	   try
-	   {
-		   if (i > _size){
-			   throw outOfBounds();
-		   }
-		   return elements[i];
-	   }
-	   catch(const std::exception& e)
-	   {
-		   std::cerr << e.what() << '\n';
-	   }
+		if (i < 0 || i >= _size)
+			throw OutOfBounds();
+		return (elements[i]);
     }
 	
-	T &operator=(T const & rhs){
+	Array<T> &operator=(const Array<T> & rhs){
 		std::cout << "Assignement operator called" << std::endl;
-		this = &rhs;
+		if (this->_size > 0)
+			delete [] this->elements;
+		this->_size = rhs.size();
+		std::cout << _size << "tamaño" << std::endl;
+		this->elements = new T(_size);
+		for (unsigned int i = 0; i < _size; i++)
+		{
+			this->elements[i] = rhs.elements[i];
+		}
 		return (*this);
 	}
-	
+	/*
+	///////////////
+	FUNCTIONS
+	////////////////
+	*/
 	unsigned int size() const {
 		return (this->_size);
 	};
+	/*
+	///////////////
+	CONSTRUCTORS 
+	////////////////
+	*/
 	Array(unsigned int n) : elements(new T[n]), _size(n){
 		std::cout << "Constructor with parameter called" << std::endl;
 	};
-	Array(Array & src){
-		*this = src; // Mal. Hay que hacer una copia del objeto con new, para que los cambios de un objeto no afecten a la copia
-		std::cout << "Copy constructor called" << std::endl;
-		return;
+	Array(const Array<T> & src) : _size(0){
+		std::cout << "Copy constructor called" << std::endl;	
+		*this = src;
 	};
 	Array() : _size(0){
 		std::cout << "Default constructor called" << std::endl;
@@ -77,3 +73,15 @@ public:
 		delete [] elements;
 	};
 };
+
+template <typename T> std::ostream  & operator<<(std::ostream &o, const Array<T> &src){
+	unsigned int	max = 5;
+
+	o << "[" << src.size() << "] ";
+	for (unsigned int i = 0; i < src.size() && i < max; i++)
+		o << src[i] << " ";
+	if (max < src.size())
+		o << "...";
+	o << std::endl;
+	return (o);
+}

@@ -13,7 +13,7 @@ std::string getRandomWord(){
 }
 
 int main ( void ){
-    //-----INTS-----
+    std::cout << "-----INTS-----" << std::endl;
     Array <int>nums(10);
     srand(time(0));
     for(unsigned int i = 0; i < nums.size(); i++){
@@ -23,7 +23,7 @@ int main ( void ){
     for(unsigned int i = 0; i < nums.size(); i++){
             std::cout << nums[i] << std::endl;
     }
-    //-----STRINGS-----
+    std::cout << "-----STRINGS-----" << std::endl;
     Array <std::string>cuerda(8);
     for(unsigned int i = 0; i < cuerda.size(); i++){
         cuerda[i] = getRandomWord();
@@ -31,21 +31,32 @@ int main ( void ){
     for(unsigned int i = 0; i < cuerda.size(); i++){
             std::cout << cuerda[i] << std::endl;
     }
-    //-----FLOATS-----
-    Array <float>flotar(4);
-    for(unsigned int i = 0; i < flotar.size(); i++){
+    std::cout << "-----FLOATS-----" << std::endl;
+    Array <float>flotante(4);
+    for(unsigned int i = 0; i < flotante.size(); i++){
         float random = (rand() % 100);
-        flotar[i] = random;
+        flotante[i] = random;
     }
-    // Solucionar asignación y copia.
-    /*Array <float>copia = flotar;
-    flotar[1] = 69.69f;
-    std::cout << "flotar" << std::endl;
-    for(unsigned int i = 0; i < flotar.size(); i++){
-            std::cout << flotar[i] << std::endl;
+
+    Array <float>copia = flotante;
+    flotante[1] = 69.69f;
+
+
+    try
+    {
+        std::cout << "lista de flotantes" << std::endl;
+        for(unsigned int i = 0; i < flotante.size(); i++){
+                std::cout << flotante[i] << std::endl;
+        }
+        std::cout << "copia de flotantes" << std::endl;
+        for(unsigned int i = 0; i < copia.size(); i++){
+                std::cout << copia[i] << std::endl;    
+        }
+        std::cout << copia[454] << std::endl;
     }
-    std::cout << "copia" << std::endl;
-    for(unsigned int i = 0; i < copia.size(); i++){
-            std::cout << copia[i] << std::endl;
-    }*/
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    
 }
