@@ -32,7 +32,7 @@ int span::shortestSpan(){
 		itsecmin = std::min_element(itmin + 1, intvct.end());
 	}
 	else
-		itsecmin = std::min(std::min_element(intvct.begin(), itmin -1), std::min_element(itmin + 1, intvct.end()));
+		itsecmin = std::min(std::min_element(intvct.begin(), itmin - 1), std::min_element(itmin + 1, intvct.end()));
 	std::cout << "secmin number:  " << *itsecmin << "     min number:  " << *itmin << std::endl;
 	return(*itsecmin - *itmin);
 };

@@ -10,10 +10,7 @@ private:
     void warning( void );
     void error( void );
     typedef void (*karenptr[])();
-    
-
 public:
-
     void complain ( std::string level );
     Karen(/* args */);
     ~Karen();

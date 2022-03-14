@@ -1,13 +1,11 @@
 #include "Karen.hpp"
 
-
 void Karen::complain (std::string level){
     int i;
     i = 3;
-    typedef void (Karen::*Complaining)(void);
+    typedef void (Karen::*ComplainList)(void);
     std::string strmodes[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-    Complaining modes[4] = {&Karen::debug, &Karen::info, &Karen::warning, &Karen::error};
-    
+    ComplainList modes[4] = {&Karen::debug, &Karen::info, &Karen::warning, &Karen::error};
     while(i >= 0){
         if(strmodes[i] == level)
             (this->*(modes[i]))();

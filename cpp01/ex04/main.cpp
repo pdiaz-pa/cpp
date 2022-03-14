@@ -5,16 +5,16 @@
 
 int main ( int argc, char *argv[] ){
 
-    std::string str1 = argv[1];
-    std::string str2 = argv[2];
+    std::string str1 = argv[2];
+    std::string str2 = argv[3];
     if (argc != 4 || str1.size() == 0 || str2.size() == 0)
     {
         std::cout << "Número de argumentos inválido" << std::endl;
         return (-1);
     }
     else{
-        if(argv[3]){
-            std::string filename = argv[3];
+        if(argv[1]){
+            std::string filename = argv[1];
             std::string newfilename = filename;
             newfilename.append(".replace");
             std::ifstream ifs(filename);

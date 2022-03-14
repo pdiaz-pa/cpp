@@ -7,7 +7,7 @@ int main (int argc, char *argv[]){
     std::string level;
 
     if (argc != 2){
-        std::cout << "Numero de argumentos erróneo" << std::endl;
+        std::cout << "Wrong arg number" << std::endl;
         return(-1);
     }
     level = argv[1];

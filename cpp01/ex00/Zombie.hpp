@@ -1,7 +1,6 @@
-
+#pragma once
 #include <string>
-#ifndef ZOMBIE_H
-# define ZOMBIE_H
+
 class Zombie{
 private:
     std::string _name;
@@ -15,4 +14,3 @@ public:
 
 void randomChump( std::string name );
 Zombie* newZombie( std::string name );
-#endif

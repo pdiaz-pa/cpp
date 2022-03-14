@@ -2,13 +2,13 @@
 
 int Karen::strtoint(std::string level){
     if (level == "DEBUG")
-        return(0);
-    else if (level == "INFO")
-        return(1);
-    else if (level == "WARNING")
-        return(2);
-    else if (level == "ERROR")
         return(3);
+    else if (level == "INFO")
+        return(2);
+    else if (level == "WARNING")
+        return(1);
+    else if (level == "ERROR")
+        return(0);
     else
         return(-1);
 }

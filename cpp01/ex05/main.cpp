@@ -12,7 +12,9 @@ int main ( void ){
     karen.complain("ERROR");
     karen.complain("WARNING");
     karen.complain("INFO");
-    karen.complain("noexiste");
     karen.complain("DEBUG");
+    karen.complain("noexiste");
+    karen.complain("noexiste");
+    karen.complain("noexiste");
     return (0);
 }
