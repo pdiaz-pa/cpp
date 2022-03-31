@@ -3,8 +3,6 @@
 #include "DiamondTrap.hpp"
 
 int main( void ){
-    
-
 	DiamondTrap julian("Julian");
     julian.attack("Pepe");
 	julian.highFiveGuys();

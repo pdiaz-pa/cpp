@@ -1,7 +1,7 @@
 #include "DiamondTrap.hpp"
 
 DiamondTrap::DiamondTrap(){
-
+	std::cout << "Standard DiamondTrap created" <<  std::endl;
 }
 
 DiamondTrap & DiamondTrap::operator=(DiamondTrap const & rhs){
@@ -11,6 +11,7 @@ DiamondTrap & DiamondTrap::operator=(DiamondTrap const & rhs){
 		this->_hitpoints = rhs._hitpoints;
 		this->_name = rhs._name;
 	}
+	return(*this);
 }
 
 DiamondTrap::DiamondTrap(DiamondTrap const & src){

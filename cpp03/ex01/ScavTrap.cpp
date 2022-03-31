@@ -23,6 +23,7 @@ ScavTrap & ScavTrap::operator=(ScavTrap & rhs){
 		this->_hitpoints = rhs._hitpoints;
 		this->_name = rhs._name;
 	}
+	return (*this);
 }
 
 ScavTrap::ScavTrap(ScavTrap & src){

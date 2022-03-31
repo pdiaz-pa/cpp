@@ -7,6 +7,7 @@ FrogTrap & FrogTrap::operator=(FrogTrap & rhs){
 		this->_hitpoints = rhs._hitpoints;
 		this->_name = rhs._name;
 	}
+    return(*this);
 }
 
 FrogTrap::FrogTrap(FrogTrap & src){

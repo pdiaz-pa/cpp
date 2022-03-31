@@ -11,6 +11,7 @@ FrogTrap & FrogTrap::operator=(FrogTrap & rhs){
 		this->_hitpoints = rhs._hitpoints;
 		this->_name = rhs._name;
 	}
+	return (*this);
 }
 
 FrogTrap::FrogTrap(FrogTrap & src){
@@ -23,7 +24,7 @@ FrogTrap::FrogTrap(std::string name){
     _hitpoints = 100;
     _energypoints = 50;
     _attackdamage = 20;
-    std::cout << "FrogTrap created" << _name << std::endl;
+    std::cout << "FrogTrap created. Name->" << _name << " Hitpoints->" << _hitpoints << " Energypoints->" << _energypoints << " Attack damage->" << _attackdamage << std::endl;
 }
 FrogTrap::~FrogTrap(){
     std::cout << "Frogtrap destroyed->" << _name <<  std::endl;

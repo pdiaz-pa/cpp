@@ -4,7 +4,7 @@
 class FrogTrap : public ClapTrap
 {
 private:
-    std::string _name;
+
 public:
 	FrogTrap & operator=(FrogTrap & rhs);
 	FrogTrap(FrogTrap & src);

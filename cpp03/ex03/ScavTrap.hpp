@@ -11,7 +11,6 @@ public:
 	ScavTrap(ScavTrap & src);
 	ScavTrap();
     ScavTrap(std::string name);
-    ScavTrap();
     ~ScavTrap();
 };
 
