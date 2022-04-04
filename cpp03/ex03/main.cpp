@@ -1,5 +1,6 @@
+#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
-#include "FrogTrap.hpp"
+#include "FragTrap.hpp"
 #include "DiamondTrap.hpp"
 
 int main( void ){

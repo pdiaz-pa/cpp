@@ -1,8 +1,8 @@
 #pragma once
-#include "FrogTrap.hpp"
+#include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
-class DiamondTrap : public FrogTrap, public ScavTrap
+class DiamondTrap : public ScavTrap, public FragTrap
 {
 private:
 	std::string _name;
@@ -15,4 +15,3 @@ public:
 	void whoAmI( void );
 	using ScavTrap::attack;
 };
-

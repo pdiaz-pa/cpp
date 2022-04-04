@@ -2,7 +2,6 @@
 
 void    ClapTrap::attack(std::string const & target){
     std::cout << "Claptrap " << this->_name << " attack " << target << " causing " << this->_attackdamage << " points of damage!" << std::endl;
-    
 }
 void    ClapTrap::takeDamage(unsigned int amount){
     this->_hitpoints = this->_hitpoints - amount;
@@ -36,7 +35,8 @@ ClapTrap::ClapTrap(ClapTrap const & src){
 	return;
 }
 
-ClapTrap::ClapTrap(){
+ClapTrap::ClapTrap(): _hitpoints(10), _energypoints(10), _attackdamage(0){
+    this->_name = "defaultclap";
     std::cout << "Standard Claptrap created" << std::endl;
 }
 
