@@ -1,7 +1,7 @@
 #include "WrongCat.hpp"
 
 void WrongCat::MakeSound() const{
-	std::cout << "cuack" << std::endl;
+	std::cout << "cuack (=ಠᆽಠ=)" << std::endl;
 }
 
 const std::string WrongCat::getType( void ) const{

@@ -1,7 +1,7 @@
 #include "Dog.hpp"
 
 void Dog::MakeSound() const{
-	std::cout << "guau" << std::endl;
+	std::cout << "guau ▼・ᴥ・▼" << std::endl;
 }
 
 const std::string Dog::getType( void ) const{
@@ -18,7 +18,7 @@ Dog & Dog::operator=(Dog const & rhs){
 	return *this;
 }
 
-Dog::Dog(/* args */)
+Dog::Dog()
 {
 	std::cout << "Default Dog created." << std::endl;
 	type = "Dog";

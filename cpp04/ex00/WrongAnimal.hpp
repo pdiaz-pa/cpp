@@ -9,7 +9,7 @@ public:
 	void MakeSound() const;
 	const std::string getType( void ) const;
 	WrongAnimal & operator=(WrongAnimal const & rhs);
-	WrongAnimal(/* args */);
 	WrongAnimal(WrongAnimal const & src);
+	WrongAnimal();
 	~WrongAnimal();
 };

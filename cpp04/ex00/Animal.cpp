@@ -18,7 +18,13 @@ Animal & Animal::operator=(Animal const & rhs){
 	return *this;
 }
 
-Animal::Animal(/* args */)
+Animal::Animal(std::string name)
+{
+	type = name;
+	std::cout << "Animal created." << std::endl;
+}
+
+Animal::Animal()
 {
 	std::cout << "Default Animal created." << std::endl;
 	type = "unknown animal";

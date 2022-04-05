@@ -1,7 +1,7 @@
 #include "Cat.hpp"
 
 void Cat::MakeSound() const{
-	std::cout << "meow" << std::endl;
+	std::cout << "miau =^._.^= ∫" << std::endl;
 }
 
 const std::string Cat::getType( void ) const{

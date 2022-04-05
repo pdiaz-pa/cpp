@@ -19,5 +19,6 @@ int main ( void ){
 	i->MakeSound();
 	meta->MakeSound();
 	k->MakeSound();
+
 	return (0);
 }

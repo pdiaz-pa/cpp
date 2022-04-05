@@ -23,7 +23,6 @@ int main ( void ){
 		delete array[i];
 		i--;
 	}
-
 	system("leaks brains");
 	return (0);
 }
