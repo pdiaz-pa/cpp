@@ -1,19 +1,19 @@
 #include "MateriaSource.hpp"
 
-void MateriaSource::learnMateria(AMateria *m){
+void MateriaSource::learnMateria(AMateria *materia){
 	int i;
 	i = 0;
 
 	while (i < this->arraysize){
 		if (this->array[i] == NULL){
-			this->array[i] = m;
+			this->array[i] = materia;
 			std::cout << "MateriaSource learning " << array[i]->getType() << " in slot " << i << std::endl;
 			return;
 		}
 		i++;
 	}
 	std::cout << "Can't learn more materias, this MateriaSource is full." << std::endl;
-	delete m;
+	delete materia;
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type){
@@ -22,8 +22,10 @@ AMateria* MateriaSource::createMateria(std::string const & type){
 
 	while (i < arraysize)
 	{
-		if (array[i] != NULL && array[i]->getType() == type)
+		if (array[i] != NULL && array[i]->getType() == type){
+			std::cout << "Materia created->" << type << std::endl;
 			return (array[i]->clone());
+		}
 		i++;
 	}
 	std::cout << "MateriaSource" << " can't create " << type << " materia (not learned)" << std::endl;
@@ -36,7 +38,7 @@ MateriaSource::MateriaSource(const MateriaSource &src)
 	*this = src;
 }
 
-MateriaSource::MateriaSource(/* args */)
+MateriaSource::MateriaSource()
 {
 	int i;
 	i = 0;

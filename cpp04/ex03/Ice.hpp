@@ -8,6 +8,7 @@ protected:
 public:
 	void use(ICharacter& target);
 	Ice* clone() const;
+	
 	Ice & operator=(const Ice & ice);
 	Ice(const Ice & src);
 	Ice();

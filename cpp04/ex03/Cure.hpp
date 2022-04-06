@@ -8,6 +8,7 @@ protected:
 public:
 	void use(ICharacter& target);
 	Cure* clone() const;
+	
 	Cure & operator=(const Cure & Cure);
 	Cure(const Cure & src);
 	Cure();

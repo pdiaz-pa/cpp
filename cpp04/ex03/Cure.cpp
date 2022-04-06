@@ -19,7 +19,7 @@ Cure	*Cure::clone() const{
 	return (new Cure(*this));
 }
 
-Cure::Cure(/* args */) : AMateria("cure")
+Cure::Cure() : AMateria("cure")
 {
 	std::cout << "Cure Constructor called" << std::endl;
 }
