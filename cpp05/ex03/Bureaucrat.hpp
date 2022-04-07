@@ -5,7 +5,7 @@
 
 class Form;
 
-class Bureucrat
+class Bureaucrat
 {
     public:
     class GradeTooHighException : public std::exception{
@@ -24,17 +24,17 @@ class Bureucrat
     	};
     void executeForm(Form const & form);
 	void signForm(Form &form);
-    Bureucrat & operator=(const Bureucrat & bureucrat);
+    Bureaucrat & operator=(const Bureaucrat & bureaucrat);
     void moreGrade();
     void lessGrade();
     std::string getName() const;
     int getGrade() const;
-    Bureucrat(const std::string & name, int grade);
-    Bureucrat();
-    virtual ~Bureucrat();
+    Bureaucrat(const std::string & name, int grade);
+    Bureaucrat();
+    virtual ~Bureaucrat();
 protected:
     const std::string name;
     int grade;
 };
 
-std::ostream& operator<<(std::ostream &o, Bureucrat const &bureucrat);
+std::ostream& operator<<(std::ostream &o, Bureaucrat const &bureaucrat);

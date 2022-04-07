@@ -1,4 +1,4 @@
-#include "Bureucrat.hpp"
+#include "Bureaucrat.hpp"
 #include "Form.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
@@ -8,8 +8,8 @@
 int main(){ 
 
 	Form		*shrub = new ShrubberyCreationForm("home");
-	Bureucrat	curro("curro", 1);
-	Bureucrat	goku("goku", 140);
+	Bureaucrat	curro("curro", 1);
+	Bureaucrat	goku("goku", 140);
 	srand(time(NULL));
 	curro.executeForm(*shrub);
 	curro.signForm(*shrub);
@@ -22,7 +22,7 @@ int main(){
 std::cout << "----------------------------------------------------------------" << std::endl;
 
 	Form		*robotomy = new RobotomyRequestForm("santana");
-	Bureucrat	superman("Superman", 1);
+	Bureaucrat	superman("Superman", 1);
 
 	superman.executeForm(*robotomy);
 	superman.signForm(*robotomy);
@@ -35,7 +35,7 @@ std::cout << "----------------------------------------------------------------" 
 std::cout << "----------------------------------------------------------------" << std::endl;
 	
 	Form		*presidential = new PresidentialPardonForm("marvin");
-	Bureucrat	pdr("Pedro Sanchez", 6);
+	Bureaucrat	pdr("Pedro Sanchez", 6);
 
 	pdr.executeForm(*presidential);
 	pdr.signForm(*presidential);

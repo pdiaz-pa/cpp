@@ -1,6 +1,6 @@
 #include "RobotomyRequestForm.hpp"
 
-void RobotomyRequestForm::letsExecute(Bureucrat const & executor) const{
+void RobotomyRequestForm::letsExecute(Bureaucrat const & executor) const{
 	if (this->getSigned() == 0)
 		throw IsnotSigned();
 	else if (executor.getGrade() > this->getReqexec())

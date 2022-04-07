@@ -2,7 +2,7 @@
 #include <string>
 
 
-void ShrubberyCreationForm::letsExecute(Bureucrat const & executor) const{
+void ShrubberyCreationForm::letsExecute(Bureaucrat const & executor) const{
 
 	if (this->getSigned() == 0)
 		throw IsnotSigned();

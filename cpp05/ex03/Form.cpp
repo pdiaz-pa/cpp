@@ -1,6 +1,6 @@
 #include "Form.hpp"
 
-void Form::execute(Bureucrat const & executor) const{
+void Form::execute(Bureaucrat const & executor) const{
 	if (this->_signed == 1 && executor.getGrade() <= this->reqexec){
 		letsExecute(executor);
 	}
@@ -9,13 +9,13 @@ void Form::execute(Bureucrat const & executor) const{
 	}
 }
 
-void Form::beSigned(Bureucrat &bureucrat){
-	if (bureucrat.getGrade() > this->reqgrade){
+void Form::beSigned(Bureaucrat &bureaucrat){
+	if (bureaucrat.getGrade() > this->reqgrade){
 		throw GradeTooLowException();
 	}
 	else
 	{
-		std::cout << this->name << " was signed by " << bureucrat.getName() << std::endl;
+		std::cout << this->name << " was signed by " << bureaucrat.getName() << std::endl;
 		_signed = 1;
 	}
 }
@@ -40,10 +40,22 @@ void Form::setSigned(){
 	this->_signed = 1;
 }
 
+Form	&Form::operator=(const Form &form)
+{
+	if (this != &form)
+		_signed = form._signed;
+	return (*this);
+}
+
 std::ostream& operator<<(std::ostream &o, Form const &form){
 	o << "Form " << form.getName() << " requires " << form.getReqgrade() << " grade to be signed and " << form.getReqexec() << " grade to be executed.";
 	return o; 
 }
+
+Form::Form(const Form & src): name(src.name), reqgrade(src.reqgrade), reqexec(src.reqexec){
+	*this = src;
+}
+
 Form::Form(std::string name, const int reqgrade, const int reqexec) : name(name), reqgrade(reqgrade), reqexec(reqexec) 
 {
 	_signed = 0;
@@ -63,4 +75,5 @@ Form::Form() : name("standardform"), reqgrade(150), reqexec(150){
 
 Form::~Form()
 {
+	std::cout << "Form destroyed." << std::endl;
 }

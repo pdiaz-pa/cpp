@@ -1,8 +1,8 @@
 #pragma once 
 #include <string>
-#include "Bureucrat.hpp"
+#include "Bureaucrat.hpp"
 
-class Bureucrat;
+class Bureaucrat;
 
 class Form
 {
@@ -47,16 +47,17 @@ public:
         	return ("Form::exception : this Form is not executable by this executor");
         }
     };
-    virtual void letsExecute(Bureucrat const & executor) const = 0;
-    virtual void execute(Bureucrat const & executor) const;
+    virtual void letsExecute(Bureaucrat const & executor) const = 0;
+    virtual void execute(Bureaucrat const & executor) const;
 	const std::string getName() const;
 	bool getSigned() const;
 	void setSigned();
 	int getReqgrade() const;
 	int getReqexec() const;
-    void beSigned(Bureucrat &bureucrat);
+    void beSigned(Bureaucrat &bureaucrat);
+    Form & operator=(const Form &form);
+    Form(const Form & src);
     Form(const std::string name, const int reqgrade, const int reqexec);
-	Form(const Form & form);
 	Form();
     virtual ~Form();
 };
