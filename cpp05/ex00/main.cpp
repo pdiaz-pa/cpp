@@ -1,10 +1,11 @@
-#include "Bureucrat.hpp"
+#include "Bureaucrat.hpp"
 
 int main(){
 try
 {
-    Bureucrat *pepe = new Bureucrat("pepe", 0);
+    Bureaucrat *pepe = new Bureaucrat("pepe", 0);
     std::cout << *pepe << std::endl;
+    delete pepe;
 }
 catch(const std::exception& e)
 {
@@ -13,8 +14,9 @@ catch(const std::exception& e)
 std::cout << "----------------------------------------------------------------" << std::endl;
 try
 {
-    Bureucrat *curro = new Bureucrat("curro", 200);
+    Bureaucrat *curro = new Bureaucrat("curro", 200);
     std::cout << *curro << std::endl;
+    delete curro;
 }
 catch(const std::exception& e)
 {
@@ -23,10 +25,14 @@ catch(const std::exception& e)
 std::cout << "----------------------------------------------------------------" << std::endl;
 try
 {
-    Bureucrat *goku = new Bureucrat("goku", 30);
+    Bureaucrat *goku = new Bureaucrat("goku", 30);
     std::cout << *goku << std::endl;
     goku->moreGrade();
+    goku->moreGrade();
+    goku->moreGrade();
+    goku->moreGrade();
     std::cout << *goku << std::endl;
+    delete goku;
 }
 catch(const std::exception& e)
 {
@@ -35,10 +41,11 @@ catch(const std::exception& e)
 std::cout << "----------------------------------------------------------------" << std::endl;
 try
 {
-    Bureucrat *vegeta = new Bureucrat("vegeta", 1);
+    Bureaucrat *vegeta = new Bureaucrat("vegeta", 1);
     std::cout << *vegeta << std::endl;
     vegeta->moreGrade();
     std::cout << *vegeta << std::endl;
+    delete vegeta;
 }
 catch(const std::exception& e)
 {

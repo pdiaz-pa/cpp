@@ -12,7 +12,9 @@ public:
 				return ("Unsuccessful robotomy. :(");
 			}
 	};
-	void letsExecute(Bureucrat const & executor) const;
+	void letsExecute(Bureaucrat const & executor) const;
+	RobotomyRequestForm & operator=(const RobotomyRequestForm & rhs);
+	RobotomyRequestForm(const RobotomyRequestForm & src);
 	RobotomyRequestForm(const std::string target);
 	RobotomyRequestForm();
 	virtual ~RobotomyRequestForm();

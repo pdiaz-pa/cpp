@@ -1,10 +1,10 @@
-#include "Bureucrat.hpp"
+#include "Bureaucrat.hpp"
 #include "Form.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 int main(){
-    Bureucrat *goku = new Bureucrat("goku", 20);
+    Bureaucrat *goku = new Bureaucrat("goku", 20);
 	Form *form = new ShrubberyCreationForm("formulario");
     std::cout << *goku << std::endl;
 	std::cout << *form << std::endl;
@@ -13,7 +13,7 @@ int main(){
     /*
 try
 {
-    Bureucrat *piccolo = new Bureucrat("Piccolo", 1);
+    Bureaucrat *piccolo = new Bureaucrat("Piccolo", 1);
 	Form *form = new RobotomyRequestForm("cell");
     std::cout << *piccolo << std::endl;
 	std::cout << *form << std::endl;
@@ -28,7 +28,7 @@ catch(const std::exception& e)
 std::cout << "----------------------------------------------------------------" << std::endl;
 try
 {
-    Bureucrat *goku = new Bureucrat("goku", 20);
+    Bureaucrat *goku = new Bureaucrat("goku", 20);
 	Form *form = new ShrubberyCreationForm("formulario");
     std::cout << *goku << std::endl;
 	std::cout << *form << std::endl;
@@ -43,7 +43,7 @@ catch(const std::exception& e)
 std::cout << "----------------------------------------------------------------" << std::endl;
 try
 {
-    Bureucrat *curro = new Bureucrat("curro", 20);
+    Bureaucrat *curro = new Bureaucrat("curro", 20);
 	Form *form = new ShrubberyCreationForm("arbolito");
     std::cout << *curro << std::endl;
 	std::cout << *form << std::endl;
@@ -58,7 +58,7 @@ catch(const std::exception& e)
 std::cout << "----------------------------------------------------------------" << std::endl;
 try
 {
-    Bureucrat *vegeta = new Bureucrat("vegeta", 2);
+    Bureaucrat *vegeta = new Bureaucrat("vegeta", 2);
 	Form *form = new PresidentialPardonForm("elpepe");
     std::cout << *vegeta << std::endl;
 	std::cout << *form << std::endl;

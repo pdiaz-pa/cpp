@@ -1,7 +1,7 @@
 #include "PresidentialPardonForm.hpp"
 
 
-void PresidentialPardonForm::letsExecute(Bureucrat const & executor) const{
+void PresidentialPardonForm::letsExecute(Bureaucrat const & executor) const{
 	if (this->getSigned() == 0)
 		throw IsnotSigned();
 	else if (executor.getGrade() > this->getReqexec())

@@ -1,6 +1,6 @@
 #include "ShrubberyCreationForm.hpp"
 #include <string>
-void ShrubberyCreationForm::letsExecute(Bureucrat const & executor) const{
+void ShrubberyCreationForm::letsExecute(Bureaucrat const & executor) const{
 
 	if (this->getSigned() == 0)
 		throw IsnotSigned();
@@ -42,6 +42,10 @@ void ShrubberyCreationForm::letsExecute(Bureucrat const & executor) const{
 	}
 }
 
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm & src){
+	*this = src;
+}
+
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("ShrubberyForm", 145, 137), _target(target)
 {
 	std::cout << "Shrubbery Creation Form created." << std::endl;
@@ -56,4 +60,5 @@ ShrubberyCreationForm::ShrubberyCreationForm() : Form("ShrubberyForm", 145, 137)
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
+	std::cout << "Shrubbery Creation Form destroyed" << std::endl;
 }
