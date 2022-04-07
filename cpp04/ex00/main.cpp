@@ -20,5 +20,10 @@ int main ( void ){
 	meta->MakeSound();
 	k->MakeSound();
 
+
+	delete meta;
+	delete j;
+	delete i;
+	delete k;
 	return (0);
 }

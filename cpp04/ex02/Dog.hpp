@@ -8,10 +8,11 @@ private:
 protected:
 
 public:
+	void printIdeas();
 	virtual void MakeSound() const;
 	const std::string getType( void ) const;
 	Dog & operator=(Dog const & rhs);
-	Dog(/* args */);
+	Dog();
 	Dog(Dog const & src);
 	~Dog();
 };

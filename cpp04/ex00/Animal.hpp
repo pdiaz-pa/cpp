@@ -12,5 +12,5 @@ public:
 	Animal(std::string name);
 	Animal(Animal const & src);
 	Animal();
-	~Animal();
+	virtual ~Animal();
 };
