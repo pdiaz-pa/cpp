@@ -16,6 +16,16 @@ void RobotomyRequestForm::letsExecute(Bureaucrat const & executor) const{
 		}
 	}
 }
+
+RobotomyRequestForm & RobotomyRequestForm::operator=(const RobotomyRequestForm & rhs){
+	(void)rhs;
+	return(*this);
+}
+
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm & src){
+	*this = src;
+}
+
 RobotomyRequestForm::RobotomyRequestForm(const std::string target)  : Form("RobotomyForm", 72, 45), _target(target)
 {
 	std::cout << "Robotomy Request Form created." << std::endl;

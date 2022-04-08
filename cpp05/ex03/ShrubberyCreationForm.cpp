@@ -1,7 +1,5 @@
 #include "ShrubberyCreationForm.hpp"
 #include <string>
-
-
 void ShrubberyCreationForm::letsExecute(Bureaucrat const & executor) const{
 
 	if (this->getSigned() == 0)
@@ -39,18 +37,27 @@ void ShrubberyCreationForm::letsExecute(Bureaucrat const & executor) const{
 		file << "                               .%@@@@%::;         	" << std::endl;
 		file << "                               ;%@@@@%::;.          	" << std::endl;
 		file << "                              ;%@@@@%%:;;;. 	" << std::endl;
-		file << "                          ...;%@@@@@%%:;;;;,..  	" << std::endl;
+		file << "                          ...;%@@@@@%%:;;;;,..    Gilo97	" << std::endl;
 		file.close();
 	}
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("shrubbery creation", 145, 137), _target(target)
+ShrubberyCreationForm & ShrubberyCreationForm::operator=(const ShrubberyCreationForm & rhs){
+	(void)rhs;
+	return(*this);
+}
+
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm & src){
+	*this = src;
+}
+
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("ShrubberyForm", 145, 137), _target(target)
 {
 	std::cout << "Shrubbery Creation Form created." << std::endl;
 
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm() : Form("shrubbery creation", 145, 137), _target("target")
+ShrubberyCreationForm::ShrubberyCreationForm() : Form("ShrubberyForm", 145, 137), _target("target")
 {
 	std::cout << "Standard Shrubbery Creation Form created." << std::endl;
 
@@ -58,5 +65,5 @@ ShrubberyCreationForm::ShrubberyCreationForm() : Form("shrubbery creation", 145,
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
-	std::cout << "Shrubbery Creation Form destroyed." << std::endl;
+	std::cout << "Shrubbery Creation Form destroyed" << std::endl;
 }

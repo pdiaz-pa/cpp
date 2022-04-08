@@ -42,6 +42,11 @@ void ShrubberyCreationForm::letsExecute(Bureaucrat const & executor) const{
 	}
 }
 
+ShrubberyCreationForm & ShrubberyCreationForm::operator=(const ShrubberyCreationForm & rhs){
+	(void)rhs;
+	return(*this);
+}
+
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm & src){
 	*this = src;
 }

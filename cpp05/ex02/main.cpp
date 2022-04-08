@@ -10,7 +10,7 @@ int main(){
 	std::cout << *form << std::endl;
 	form->beSigned(*goku);
     goku->executeForm(*form);
-    /*
+    
 try
 {
     Bureaucrat *piccolo = new Bureaucrat("Piccolo", 1);
@@ -71,5 +71,4 @@ catch(const std::exception& e)
     std::cerr << e.what() << '\n';
 }
 std::cout << "----------------------------------------------------------------" << std::endl;
-*/
 }

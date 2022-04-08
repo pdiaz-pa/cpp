@@ -10,6 +10,11 @@ void PresidentialPardonForm::letsExecute(Bureaucrat const & executor) const{
 	}
 }
 
+PresidentialPardonForm & PresidentialPardonForm::operator=(const PresidentialPardonForm & rhs){
+	(void)rhs;
+	return(*this);
+}
+
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm & src){
 	*this = src;
 }
