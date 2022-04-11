@@ -5,7 +5,7 @@ class Intern
 {
 public:
     Form *makeForm(const std::string formname, const std::string target) const;
-    Intern(/* args */);
+    Intern();
     virtual ~Intern();
 };
 

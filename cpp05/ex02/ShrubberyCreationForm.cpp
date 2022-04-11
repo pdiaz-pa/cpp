@@ -8,7 +8,7 @@ void ShrubberyCreationForm::letsExecute(Bureaucrat const & executor) const{
 		throw GradeTooLowException();
 	else{
 		std::cout << "Drawing a beautiful tree in " << (_target + "_shrubbery") << " :) " << std::endl;
-		std::ofstream file(_target);
+		std::ofstream file(_target + "_shrubbery");
 
 		file << "                                                    .	" << std::endl;
 		file << "                                              .         ;  	" << std::endl;

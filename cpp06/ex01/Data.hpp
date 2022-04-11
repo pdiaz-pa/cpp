@@ -11,7 +11,6 @@ private:
     float _float;
 	int	_precision;
 	bool _oofchar;
-	//bool _oofint;
 public:
 	void decimalPrecision();
     void charPrinter();

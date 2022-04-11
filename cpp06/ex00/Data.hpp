@@ -5,13 +5,12 @@ class Data
 {
 private:
 	char *rawstr;
-    int _int;
+    int _int; 
     char _char;
     double _double;
     float _float;
 	int	_precision;
 	bool _oofchar;
-	//bool _oofint;
 public:
 	void decimalPrecision();
     void charPrinter();

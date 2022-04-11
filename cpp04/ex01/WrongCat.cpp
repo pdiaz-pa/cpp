@@ -18,7 +18,7 @@ WrongCat & WrongCat::operator=(WrongCat const & rhs){
 	return *this;
 }
 
-WrongCat::WrongCat(/* args */)
+WrongCat::WrongCat()
 {
 	std::cout << "Default WrongCat created." << std::endl;
 	type = "WrongCat";
