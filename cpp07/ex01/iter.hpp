@@ -1,6 +1,11 @@
 #pragma once
 #include <iostream>
 
+template <typename T>void signer(const T & arg){
+	(void)arg;
+	std::cout << "implemented by pdiaz-pa" << std::endl;
+}
+
 template <typename T>void printer(const T & arg){
 
 	std::cout << "arg:  " << arg << std::endl;

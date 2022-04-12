@@ -13,6 +13,8 @@ std::string getRandomWord(){
 }
 
 int main ( void ){
+	Array<int>empty;
+
     std::cout << "-----INTS-----" << std::endl;
     Array <int>nums(10);
     srand(time(0));

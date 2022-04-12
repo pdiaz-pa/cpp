@@ -60,11 +60,11 @@ public:
 	Array(unsigned int n) : elements(new T[n]), _size(n){
 		std::cout << "Constructor with parameter called" << std::endl;
 	};
-	Array(const Array<T> & src) : _size(0){
+	Array(const Array<T> & src) : elements(NULL), _size(0){
 		std::cout << "Copy constructor called" << std::endl;	
 		*this = src;
 	};
-	Array() : _size(0){
+	Array() : elements(NULL), _size(0){
 		std::cout << "Default constructor called" << std::endl;
 	};
 	~Array(){

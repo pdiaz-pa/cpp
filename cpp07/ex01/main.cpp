@@ -11,7 +11,7 @@ int main ( void ){
     
 
 	std::string strarray[] = {"hola", "como", "estas", "bien", "adios", "y tal"};
-	::iter<std::string>(strarray, 3, printer);
+	::iter<std::string>(strarray, 3, signer);
 
 	float floatarray[] = {1.3f, 2.2f, 3.9f, 4.13f, 5.44f, 6.66f, 7.45f, 8.12f, 9.44f};
     ::iter<float>(floatarray, 9 , printer);
