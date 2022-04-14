@@ -13,10 +13,9 @@ std::string getRandomWord(){
 }
 
 int main ( void ){
-	Array<int>empty;
-
     std::cout << "-----INTS-----" << std::endl;
     Array <int>nums(10);
+	std::cout << nums;
     srand(time(0));
     for(unsigned int i = 0; i < nums.size(); i++){
         int random = (rand() % 100);
@@ -24,11 +23,12 @@ int main ( void ){
     }
     std::cout << nums;
     std::cout << "-----STRINGS-----" << std::endl;
-    Array <std::string>cuerda(8);
-    for(unsigned int i = 0; i < cuerda.size(); i++){
-        cuerda[i] = getRandomWord();
+    Array <std::string>palabras(8);
+	std::cout << palabras;
+    for(unsigned int i = 0; i < palabras.size(); i++){
+        palabras[i] = getRandomWord();
     }
-    std::cout << cuerda;
+    std::cout << palabras;
     std::cout << "-----FLOATS-----" << std::endl;
     Array <float>flotante(4);
     for(unsigned int i = 0; i < flotante.size(); i++){

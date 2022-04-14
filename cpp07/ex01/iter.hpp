@@ -18,7 +18,7 @@ template<typename T> void iter(const T * array, int size, void function(const T 
 		std::cout << "Error : size tiene que ser positivo" << std::endl;
 		return ;
 	}
-    while (i < size ){
+    while (i < size){
         function(array[i]);
         i++;
     }

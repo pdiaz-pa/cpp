@@ -57,12 +57,15 @@ public:
 	CONSTRUCTORS 
 	////////////////
 	*/
-	Array(unsigned int n) : elements(new T[n]), _size(n){
+	Array(unsigned int n) : elements(new T[n]()), _size(n){
 		std::cout << "Constructor with parameter called" << std::endl;
 	};
-	Array(const Array<T> & src) : elements(NULL), _size(0){
+	Array(const Array<T> & src) : elements(NULL), _size(src._size){
 		std::cout << "Copy constructor called" << std::endl;	
-		*this = src;
+		elements = new T[_size]();
+		for (unsigned int i = 0; i < _size; i++){
+			elements[i] = src.elements[i];
+		}
 	};
 	Array() : elements(NULL), _size(0){
 		std::cout << "Default constructor called" << std::endl;
