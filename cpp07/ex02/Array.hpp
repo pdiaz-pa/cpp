@@ -26,7 +26,12 @@ public:
 	OVERLOADS
 	////////////////
 	*/
-    T &operator[](unsigned int i) const{
+    T &operator[](unsigned int i){
+		if (i < 0 || i >= _size)
+			throw OutOfBounds();
+		return (elements[i]);
+    }
+    T const &operator[](unsigned int i) const{
 		if (i < 0 || i >= _size)
 			throw OutOfBounds();
 		return (elements[i]);
@@ -72,7 +77,8 @@ public:
 	};
 	~Array(){
 		std::cout << "Destructor called" << std::endl;
-		delete [] elements;
+		if (this->elements != NULL)
+			delete [] elements;
 	};
 };
 
