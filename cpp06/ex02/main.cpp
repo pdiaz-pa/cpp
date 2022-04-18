@@ -32,8 +32,6 @@ void identify(Base *p){
 		std::cout << "B ";
 	else if (dynamic_cast<C *>(p) != NULL)
 		std::cout << "C ";
-	else
-		std::cout << "undefined";
 	return;
 }
 

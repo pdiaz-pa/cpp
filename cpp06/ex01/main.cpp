@@ -15,9 +15,9 @@ int main ( int argc, char **argv ){
     }
     Data *data = new Data(argv[1]);
     data->processor();
-
 	uintptr_t serializedInt = serialize(data);
 	std::cout << "this is the serialized int->"<< serializedInt << std::endl;
+
 	Data *reconstructed = deserialize(serializedInt);
 	reconstructed->processor();
 }
