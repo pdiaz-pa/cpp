@@ -62,7 +62,5 @@ int	main(void)
 		std::cout << *it1 << std::endl;
 		++it1;
 	}
-
-
 	return (0);
 }

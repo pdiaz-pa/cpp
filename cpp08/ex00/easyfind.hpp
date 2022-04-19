@@ -1,6 +1,8 @@
 #pragma once
 #include <algorithm>
 #include <vector>
+#include <list>
+#include <deque>
 #include <iostream>
 
 class ValueNotFound : public std::exception
@@ -17,7 +19,6 @@ typename T::iterator easyfind(T & cont, int value){
     it = std::find(cont.begin(), cont.end(), value);
     if(it != cont.end()){
         std::cout << value << " found in container." << std::endl;
-
     }
     else{
         throw ValueNotFound();

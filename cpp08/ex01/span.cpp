@@ -16,25 +16,25 @@ int span::longestSpan(){
 	std::vector<int>::iterator itmax = std::max_element(intvct.begin(), intvct.end());
 
 	std::cout << "max number:  " << *itmax << "     min number:  " << *itmin << std::endl;
+	std::cout << "the longest span is : " ;
 	return (*itmax - *itmin);
 };
 
 int span::shortestSpan(){
 	if (this->intvct.size() < 2)
 		throw NotEnoughNumbers();
-	std::vector<int>::iterator itmin = std::min_element(intvct.begin(), intvct.end());
+	std::vector<int> temp = intvct;
+	sort(temp.begin(), temp.end());
+	int ret = (temp[1] - temp[0]);
+	std::vector<int>::iterator it = temp.begin() + 1;
 	std::vector<int>::iterator itsecmin;
-	if (intvct.size() == 2){
-		
-		itsecmin  = std::max_element(intvct.begin(), intvct.end());
+	while (it < temp.end() - 1){
+		if (*(it + 1) - *it < ret)
+			ret = *(it + 1) - *it;
+		it++;
 	}
-	else if (itmin == intvct.begin()){
-		itsecmin = std::min_element(itmin + 1, intvct.end());
-	}
-	else
-		itsecmin = std::min(std::min_element(intvct.begin(), itmin - 1), std::min_element(itmin + 1, intvct.end()));
-	std::cout << "secmin number:  " << *itsecmin << "     min number:  " << *itmin << std::endl;
-	return(*itsecmin - *itmin);
+	std::cout << "the shortest span is : ";
+	return (ret);
 };
 void span::addNumber(int value){
 	intvct.push_back(value);

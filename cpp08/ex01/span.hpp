@@ -2,6 +2,7 @@
 #include <vector>
 #include <iostream>
 #include <algorithm>
+
 class span{
     private:
         std::vector<int> intvct;
@@ -10,12 +11,12 @@ class span{
     public:
         class TooMuchNumbers : public std::exception{
             const char *what() const throw(){
-                return ( "Exception: You are trying to push too many numbers to this vector ");
+                return ( "Exception: TooMuchNumbers: You are trying to push too many numbers to this vector ");
             }
         };
         class NotEnoughNumbers : public std::exception{
             const char *what() const throw(){
-                return ( "Exception: Not enough numbers in this vector ");
+                return ( "Exception: NotEnoughNumbers: Not enough numbers in this vector ");
             }
         };
 		void fillTheVector(std::vector<int> extvector);

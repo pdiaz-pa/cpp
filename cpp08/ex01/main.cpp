@@ -28,10 +28,10 @@ int main ( void )
 	{
 		std::cerr << e.what() << '\n';
 	}
-	std::cout << "-----PRUEBA SIMPLE-----" << std::endl;
+	std::cout << "-----TEST SIMPLE-----" << std::endl;
 	extvector.clear();
 	for (int i = 0; i < 7; i++){
-		extvector.push_back(rand() % 100);
+		extvector.push_back(rand() % 1000);
 	}
 	span test2(10);
 	try
@@ -45,14 +45,12 @@ int main ( void )
 	{
 		std::cerr << e.what() << '\n';
 	}
-	std::cout << "-----PRUEBA COMPLEJA-----" << std::endl;
+	std::cout << "-----TEST COMPLEJO-----" << std::endl;
 	extvector.clear();
 	for (int i = 0; i != 15000; i++){
 		extvector.push_back(rand() % 30000);
 	}
 
-
-	
     span test(15000);
 	try
 	{
