@@ -15,7 +15,6 @@ int span::longestSpan(){
 	std::vector<int>::iterator itmin = std::min_element((intvct.begin()), intvct.end());
 	std::vector<int>::iterator itmax = std::max_element(intvct.begin(), intvct.end());
 
-	std::cout << "max number:  " << *itmax << "     min number:  " << *itmin << std::endl;
 	std::cout << "the longest span is : " ;
 	return (*itmax - *itmin);
 };
